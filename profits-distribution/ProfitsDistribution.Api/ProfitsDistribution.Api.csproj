@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ProfitsDistribution.CC.IoC\ProfitsDistribution.CC.IoC.csproj" />
     <ProjectReference Include="..\ProfitsDistribution.Domain\ProfitsDistribution.Domain.csproj" />
   </ItemGroup>
