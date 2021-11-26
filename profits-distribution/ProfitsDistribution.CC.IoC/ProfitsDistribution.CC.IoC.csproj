@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProfitsDistribution.Domain\ProfitsDistribution.Domain.csproj" />
+    <ProjectReference Include="..\ProfitsDistribution.Infra.Data\ProfitsDistribution.Infra.Data.csproj" />
+    <ProjectReference Include="..\ProfitsDistribution.Service\ProfitsDistribution.Service.csproj" />
+  </ItemGroup>
+
+</Project>
