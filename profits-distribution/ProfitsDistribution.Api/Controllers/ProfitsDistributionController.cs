@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProfitsDistribution.Domain.Interfaces.Service;
+using System.Threading.Tasks;
 
 namespace ProfitsDistribution.Api.Controllers
 {
@@ -12,6 +13,12 @@ namespace ProfitsDistribution.Api.Controllers
         public ProfitsDistributionController(IProfitsDistributionService profitsDistributionService)
         {
             _profitsDistributionService = profitsDistributionService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CalculateProfitDistribution(double amountToBeDistributed)
+        {
+            return Ok();
         }
     }
 }

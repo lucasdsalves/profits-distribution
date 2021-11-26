@@ -22,6 +22,7 @@ namespace ProfitsDistribution.Api
         {
             // Dependency Injection
             ConfigureService.RegisterServicesDependencies(services);
+            ConfigureRepository.ConfigureRepositoryDependencies(services, Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
