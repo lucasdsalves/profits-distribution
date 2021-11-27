@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProfitsDistribution.Domain.Interfaces.Service;
+using System.Threading.Tasks;
 
 namespace ProfitsDistribution.Api.Controllers
 {
@@ -14,5 +15,10 @@ namespace ProfitsDistribution.Api.Controllers
             _employeeService = employeeService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllEmployees()
+        {
+            return Ok(await _employeeService.GetAllEmployeesAsync());
+        }
     }
 }

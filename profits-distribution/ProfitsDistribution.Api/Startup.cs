@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using ProfitsDistribution.CC.IoC.AutoMapper;
 using ProfitsDistribution.CC.IoC.DependencyInjection;
 
 namespace ProfitsDistribution.Api
@@ -23,6 +24,9 @@ namespace ProfitsDistribution.Api
             // Dependency Injection
             ConfigureService.RegisterServicesDependencies(services);
             ConfigureRepository.ConfigureRepositoryDependencies(services, Configuration);
+
+            // AutoMapper
+            AutoMapperSetup.ConfigureMappers(services);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
