@@ -20,8 +20,8 @@ namespace ProfitsDistribution.Domain.AutoMapper
                 .ForMember(dest => dest.nome, opt => opt.MapFrom(src => src.nome))
                 .ForMember(dest => dest.area, opt => opt.MapFrom(src => src.area))
                 .ForMember(dest => dest.cargo, opt => opt.MapFrom(src => src.cargo))
-                .ForMember(dest => dest.salario_bruto, opt => opt.MapFrom(src => src.salario_bruto))
-                .ForMember(dest => dest.data_de_admissao, opt => opt.MapFrom(src => src.data_de_admissao));
+                .ForMember(dest => dest.salario_bruto, opt => opt.MapFrom(src => double.Parse(src.salario_bruto, NumberStyles.Currency)))
+                .ForMember(dest => dest.data_de_admissao, opt => opt.MapFrom(src => Convert.ToDateTime(src.data_de_admissao)));
         }
     }
 }

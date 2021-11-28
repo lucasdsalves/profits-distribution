@@ -1,5 +1,7 @@
-﻿using Firebase.Database;
+﻿using AutoMapper;
+using Firebase.Database;
 using Firebase.Database.Query;
+using ProfitsDistribution.Domain.DTO;
 using ProfitsDistribution.Domain.Entities;
 using ProfitsDistribution.Domain.Interfaces.Repository;
 using System.Collections.Generic;
@@ -12,33 +14,20 @@ namespace ProfitsDistribution.Infra.Data.Repository
     {
         private readonly FirebaseClient _firebaseClient;
         private readonly string employeeCollectionKey = "employee";
+        private readonly IMapper _mapper;
 
-        public EmployeeRepository(FirebaseClient firebaseClient)
+        public EmployeeRepository(FirebaseClient firebaseClient, IMapper mapper)
         {
             _firebaseClient = firebaseClient;
+            _mapper = mapper;
         }
 
         public async Task<List<Employee>> GetAllAsync()
         {
             var firebaseEmployees = await _firebaseClient.Child(employeeCollectionKey)
-                                                         .OnceSingleAsync<List<Employee>>();
+                                                         .OnceSingleAsync<List<EmployeeDto>>();
 
-            return firebaseEmployees;
-        }
-
-        public async Task InsertAsync(List<Employee> employees)
-        {
-            foreach (var employee in employees)
-            {
-                await _firebaseClient.Child(employeeCollectionKey)
-                                     .PostAsync<Employee>(employee);
-            }
-        }
-
-        public async Task DeleteAsync()
-        {
-            await _firebaseClient.Child(employeeCollectionKey)
-                                 .DeleteAsync();
+            return _mapper.Map<List<Employee>>(firebaseEmployees);
         }
     }
 }

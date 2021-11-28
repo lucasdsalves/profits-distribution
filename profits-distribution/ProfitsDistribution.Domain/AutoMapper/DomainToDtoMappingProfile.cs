@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ProfitsDistribution.Domain.DTO;
 using ProfitsDistribution.Domain.Entities;
+using ProfitsDistribution.Domain.Tools;
 
 namespace ProfitsDistribution.Domain.AutoMapper
 {
@@ -18,8 +19,8 @@ namespace ProfitsDistribution.Domain.AutoMapper
                .ForMember(dest => dest.nome, opt => opt.MapFrom(src => src.nome))
                .ForMember(dest => dest.area, opt => opt.MapFrom(src => src.area))
                .ForMember(dest => dest.cargo, opt => opt.MapFrom(src => src.cargo))
-               .ForMember(dest => dest.salario_bruto, opt => opt.MapFrom(src => src.salario_bruto))
-               .ForMember(dest => dest.data_de_admissao, opt => opt.MapFrom(src => src.data_de_admissao));
+               .ForMember(dest => dest.salario_bruto, opt => opt.MapFrom(src => src.salario_bruto.DoubleToStringCurrency()))
+               .ForMember(dest => dest.data_de_admissao, opt => opt.MapFrom(src => src.data_de_admissao.ToString("yyyy-MM-dd")));
         }
     }
 }

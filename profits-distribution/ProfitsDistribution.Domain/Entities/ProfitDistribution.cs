@@ -19,8 +19,8 @@ namespace ProfitsDistribution.Domain.Entities
             foreach (var employee in Employees)
             {
                 var participation = GetProfit(employee);
-            }
 
+            }
         }
 
         private double GetProfit(Employee employee)
@@ -29,11 +29,7 @@ namespace ProfitsDistribution.Domain.Entities
 
             var weightByOccupationalArea = OccupationalArea.WeightByOccupationalArea(employee);
 
-            var b = 10;
-
-            var c = b * weightByOccupationalArea;
-
-            //var weightBySalary = Salary.WeightBySalary(employee);
+            var weightBySalary = Salary.WeightBySalary(employee);
 
             //var profitDistribution = (employee.salario_bruto * weightByAdmisstionTime);
             return 2;
