@@ -16,9 +16,9 @@ namespace ProfitsDistribution.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CalculateProfitDistribution(double amountToBeDistributed)
+        public async Task<IActionResult> CalculateProfitDistribution()
         {
-            return Ok();
+            return Ok(await _profitsDistributionService.GetProfitsDistributionAsync());
         }
     }
 }
