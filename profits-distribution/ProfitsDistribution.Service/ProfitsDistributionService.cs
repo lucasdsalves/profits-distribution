@@ -24,6 +24,8 @@ namespace ProfitsDistribution.Service
 
             var profitsDistribution = new ProfitDistribution(_mapper.Map<List<Employee>>(employees));
 
+            profitsDistribution.CalculateProfitsDistribution();
+
             return (_mapper.Map<ProfitDistributionDto>(profitsDistribution));
         }
     }
