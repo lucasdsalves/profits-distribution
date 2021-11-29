@@ -23,7 +23,7 @@ namespace ProfitsDistribution.Domain.Entities
         {
             foreach (var employee in Employees)
             {
-                var employeeParticipation = CalculateEmployeeParticipation(employee);
+                var employeeParticipation = CalculateEmployeeBonusParticipation(employee);
 
                 var employeeProfitsPart = new ProfitsEmployeePartDto
                 {
@@ -38,7 +38,7 @@ namespace ProfitsDistribution.Domain.Entities
             }
         }
 
-        public double CalculateEmployeeParticipation(Employee employee)
+        public double CalculateEmployeeBonusParticipation(Employee employee)
         {
             var weightByAdmissionTime = AdmissionTimeRule.WeightByAdmissionTime(employee);
 

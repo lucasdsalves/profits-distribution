@@ -5,17 +5,21 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EE8CC8EA-8EF8-4777-ADDA-3ACDFA46E81D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F382BDF2-0B26-4677-9F2F-0CCDBC220323}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitsDistribution.Api", "ProfitsDistribution.Api\ProfitsDistribution.Api.csproj", "{9D98F287-347F-420B-8879-54D32D5F3F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Domain", "ProfitsDistribution.Domain\ProfitsDistribution.Domain.csproj", "{ACD95019-8372-4393-9C2F-5EFD26E1352E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitsDistribution.Domain", "ProfitsDistribution.Domain\ProfitsDistribution.Domain.csproj", "{ACD95019-8372-4393-9C2F-5EFD26E1352E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Infra.Data", "ProfitsDistribution.Infra.Data\ProfitsDistribution.Infra.Data.csproj", "{BEB20D9C-ED1B-4799-8FB2-4099C75B7CD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitsDistribution.Infra.Data", "ProfitsDistribution.Infra.Data\ProfitsDistribution.Infra.Data.csproj", "{BEB20D9C-ED1B-4799-8FB2-4099C75B7CD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.CC.IoC", "ProfitsDistribution.CC.IoC\ProfitsDistribution.CC.IoC.csproj", "{C417B1FF-89AC-4EA8-868A-3C75A03FFA99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitsDistribution.CC.IoC", "ProfitsDistribution.CC.IoC\ProfitsDistribution.CC.IoC.csproj", "{C417B1FF-89AC-4EA8-868A-3C75A03FFA99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Service", "ProfitsDistribution.Service\ProfitsDistribution.Service.csproj", "{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitsDistribution.Service", "ProfitsDistribution.Service\ProfitsDistribution.Service.csproj", "{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C0FF55A8-94BA-4391-A0D8-7AC041F5699E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Api.Tests", "tests\ProfitsDistribution.Api.Tests\ProfitsDistribution.Api.Tests.csproj", "{F80B5B6C-EFA9-46DB-888B-1861166BB2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.IntegrationTests", "tests\ProfitsDistribution.IntegrationTests\ProfitsDistribution.IntegrationTests.csproj", "{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,14 @@ Global
 		{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +65,8 @@ Global
 		{BEB20D9C-ED1B-4799-8FB2-4099C75B7CD0} = {EE8CC8EA-8EF8-4777-ADDA-3ACDFA46E81D}
 		{C417B1FF-89AC-4EA8-868A-3C75A03FFA99} = {EE8CC8EA-8EF8-4777-ADDA-3ACDFA46E81D}
 		{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88} = {EE8CC8EA-8EF8-4777-ADDA-3ACDFA46E81D}
+		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6} = {C0FF55A8-94BA-4391-A0D8-7AC041F5699E}
+		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B} = {C0FF55A8-94BA-4391-A0D8-7AC041F5699E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8993D62-F3A8-4DAF-8E4E-B9D3886CA45C}
