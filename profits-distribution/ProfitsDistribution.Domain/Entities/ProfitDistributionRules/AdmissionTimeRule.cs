@@ -2,16 +2,16 @@
 
 namespace ProfitsDistribution.Domain.Entities.Rules
 {
-    public class AdmissionTime : DistributionRules
+    public class AdmissionTimeRule : ProfitDistributionRules
     {
-        private AdmissionTime(Employee employee) : base(employee)
+        private AdmissionTimeRule(Employee employee) : base(employee)
         {
 
         }
 
-        public static int GetWeightByAdmissionTime(Employee employee)
+        public static int WeightByAdmissionTime(Employee employee)
         {
-            var weight = new AdmissionTime(employee);
+            var weight = new AdmissionTimeRule(employee);
 
             return weight.SetWeightBy(employee);
         }

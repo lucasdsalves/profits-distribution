@@ -18,13 +18,13 @@ namespace ProfitsDistribution.Service
             _mapper = mapper;
         }
 
-        public async Task<ProfitDistributionDto> GetProfitsDistributionAsync()
+        public async Task<ProfitDistributionDto> DistributeProfitsAsync()
         {
             var employees = await _employeeService.GetAllEmployeesAsync();
 
             var profitsDistribution = new ProfitDistribution(_mapper.Map<List<Employee>>(employees));
 
-            profitsDistribution.CalculateProfitsDistribution();
+            profitsDistribution.DistributeProfitsByEmployee();
 
             return (_mapper.Map<ProfitDistributionDto>(profitsDistribution));
         }

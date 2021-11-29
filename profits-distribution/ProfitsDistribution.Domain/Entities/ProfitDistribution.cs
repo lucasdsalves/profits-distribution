@@ -19,36 +19,36 @@ namespace ProfitsDistribution.Domain.Entities
             Participacoes = new List<ProfitsEmployeePartDto>();
         }
 
-        public void CalculateProfitsDistribution()
+        public void DistributeProfitsByEmployee()
         {
             foreach (var employee in Employees)
             {
-                var participation = GetProfit(employee);
+                var employeeParticipation = CalculateEmployeeParticipation(employee);
 
                 var employeeProfitsPart = new ProfitsEmployeePartDto
                 {
                     matricula = employee.matricula,
                     nome = employee.nome,
-                    valor_da_participacao = participation.DoubleToStringCurrency()
+                    valor_da_participacao = employeeParticipation.DoubleToStringCurrency()
                 };
 
                 Participacoes.Add(employeeProfitsPart);
                 total_de_funcionarios++;
-                total_distribuido += participation;
+                total_distribuido += employeeParticipation;
             }
         }
 
-        private double GetProfit(Employee employee)
+        public double CalculateEmployeeParticipation(Employee employee)
         {
-            var weightByAdmisstionTime = AdmissionTime.GetWeightByAdmissionTime(employee);
+            var weightByAdmissionTime = AdmissionTimeRule.WeightByAdmissionTime(employee);
 
-            var weightByOccupationalArea = OccupationalArea.WeightByOccupationalArea(employee);
+            var weightByOccupationalArea = OccupationalAreaRule.WeightByOccupationalArea(employee);
 
-            var weightBySalary = Salary.WeightBySalary(employee);
+            var weightBySalary = SalaryRule.WeightBySalary(employee);
 
-            var totalDistributed = ((weightByAdmisstionTime + weightByOccupationalArea) * employee.salario_bruto * 3) / weightBySalary;
+            var totalEmployeeParticipation = ((weightByAdmissionTime + weightByOccupationalArea) * employee.salario_bruto * 3) / weightBySalary;
 
-            return Math.Round(totalDistributed, 2);
+            return Math.Round(totalEmployeeParticipation, 2);
         }
     }
 }

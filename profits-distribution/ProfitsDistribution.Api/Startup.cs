@@ -29,9 +29,23 @@ namespace ProfitsDistribution.Api
             AutoMapperSetup.ConfigureMappers(services);
 
             services.AddControllers();
+
+            // Swagger
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProfitsDistribution.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Profits Distribution API",
+                    Version = "v1",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Lucas dos Santos Alves",
+                        Url = new System.Uri("https://github.com/lucasdsalves")
+                    },
+                    Description = "Distribute profits by employee based on admission time weight, occupational area weight and salary weight."
+                });
+
+                c.EnableAnnotations();
             });
         }
 

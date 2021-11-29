@@ -2,16 +2,16 @@
 
 namespace ProfitsDistribution.Domain.Entities.Rules
 {
-    public class Salary : DistributionRules
+    public class SalaryRule : ProfitDistributionRules
     {
-        private Salary(Employee employee) : base(employee)
+        private SalaryRule(Employee employee) : base(employee)
         {
 
         }
 
         public static int WeightBySalary(Employee employee)
         {
-            var weight = new Salary(employee);
+            var weight = new SalaryRule(employee);
 
             return weight.SetWeightBy(employee);
         }

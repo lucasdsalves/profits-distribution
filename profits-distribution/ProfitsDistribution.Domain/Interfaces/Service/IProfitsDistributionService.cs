@@ -5,6 +5,6 @@ namespace ProfitsDistribution.Domain.Interfaces.Service
 {
     public interface IProfitsDistributionService
     {
-        Task<ProfitDistributionDto> GetProfitsDistributionAsync();
+        Task<ProfitDistributionDto> DistributeProfitsAsync();
     }
 }

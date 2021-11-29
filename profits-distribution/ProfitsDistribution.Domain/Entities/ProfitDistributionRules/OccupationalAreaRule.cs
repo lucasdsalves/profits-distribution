@@ -2,16 +2,16 @@
 
 namespace ProfitsDistribution.Domain.Entities.Rules
 {
-    public class OccupationalArea : DistributionRules
+    public class OccupationalAreaRule : ProfitDistributionRules
     {
-        private OccupationalArea(Employee employee) : base(employee)
+        private OccupationalAreaRule(Employee employee) : base(employee)
         {
 
         }
 
         public static int WeightByOccupationalArea(Employee employee)
         {
-            var weight = new OccupationalArea(employee);
+            var weight = new OccupationalAreaRule(employee);
 
             return weight.SetWeightBy(employee);
         }

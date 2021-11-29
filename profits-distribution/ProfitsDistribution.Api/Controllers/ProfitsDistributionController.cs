@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProfitsDistribution.Domain.Interfaces.Service;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Threading.Tasks;
 
 namespace ProfitsDistribution.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/profits-distribution")]
     [ApiController]
     public class ProfitsDistributionController : ControllerBase
     {
@@ -15,10 +16,13 @@ namespace ProfitsDistribution.Api.Controllers
             _profitsDistributionService = profitsDistributionService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CalculateProfitDistribution()
+        [HttpGet("distribute-profits")]
+        [SwaggerOperation(
+            Summary = "Distribute profits by employee and get its participation value."
+        )]
+        public async Task<IActionResult> DistributeProfits()
         {
-            return Ok(await _profitsDistributionService.GetProfitsDistributionAsync());
+            return Ok(await _profitsDistributionService.DistributeProfitsAsync());
         }
     }
 }
