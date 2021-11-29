@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Api.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.IntegrationTests", "tests\ProfitsDistribution.IntegrationTests\ProfitsDistribution.IntegrationTests.csproj", "{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitsDistribution.Domain.Tests", "ProfitsDistribution.Domain.Tests\ProfitsDistribution.Domain.Tests.csproj", "{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{5DF3CC17-F6AE-4ECF-A3C6-CAB6E8700C88} = {EE8CC8EA-8EF8-4777-ADDA-3ACDFA46E81D}
 		{F80B5B6C-EFA9-46DB-888B-1861166BB2C6} = {C0FF55A8-94BA-4391-A0D8-7AC041F5699E}
 		{DF7DCA1D-9F3B-4FDD-A23F-4B1EFEE3890B} = {C0FF55A8-94BA-4391-A0D8-7AC041F5699E}
+		{0EEF139A-B89F-47CC-81BD-AAB9DD30BFED} = {C0FF55A8-94BA-4391-A0D8-7AC041F5699E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8993D62-F3A8-4DAF-8E4E-B9D3886CA45C}
