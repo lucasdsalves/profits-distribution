@@ -70,6 +70,5 @@ namespace ProfitsDistribution.Domain.Tests.ProfitDistributionRulesTests
             // Assert
             Assert.Equal(5, weightByAdmissionTime);
         }
-         
     }
 }
