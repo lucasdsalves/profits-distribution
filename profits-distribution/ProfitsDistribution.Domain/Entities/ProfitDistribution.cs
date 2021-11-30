@@ -17,6 +17,8 @@ namespace ProfitsDistribution.Domain.Entities
         {
             Employees = employees;
             Participacoes = new List<ProfitsEmployeePartDto>();
+
+            IsValid();
         }
 
         public void DistributeProfitsByEmployee()
@@ -50,5 +52,13 @@ namespace ProfitsDistribution.Domain.Entities
 
             return Math.Round(totalEmployeeParticipation, 2);
         }
+
+        #region PRIVATE_AREA
+        private void IsValid()
+        {
+            if (Employees == null)
+                throw new ArgumentException("Funcionário encontra-se nulo.");
+        }
+        #endregion
     }
 }

@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProfitsDistribution.Domain\ProfitsDistribution.Domain.csproj" />
-    <ProjectReference Include="..\tests\ProfitsDistribution.IntegrationTests\ProfitsDistribution.IntegrationTests.csproj" />
   </ItemGroup>
 
 </Project>

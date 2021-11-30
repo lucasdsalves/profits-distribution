@@ -18,13 +18,13 @@ namespace ProfitsDistribution.Domain.Entities.Rules
 
         public override int SetWeightBy(Employee employee)
         {
-            if (employee.salario_bruto <= 2000)
-            {
+            if (employee.salario_bruto > 0 && employee.salario_bruto <= 2000) 
                 return 1;
-            }
-            else if (employee.salario_bruto > 2000 && employee.salario_bruto <= 7000)
+
+            if (employee.salario_bruto > 2000 && employee.salario_bruto <= 7000)
                 return 2;
-            else
+            
+            if (employee.salario_bruto > 7000)
                 return 5;
 
             throw new ArgumentException("Salário não se enquadra.");

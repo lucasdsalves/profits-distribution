@@ -1,4 +1,5 @@
 using ProfitsDistribution.Domain.Entities;
+using System;
 using Xunit;
 
 namespace ProfitsDistribution.Domain.Tests
@@ -14,7 +15,7 @@ namespace ProfitsDistribution.Domain.Tests
         }
 
         [Fact]
-        public void ProfitDistribution_AreReturnFieldsNull()
+        public void ProfitDistribution_EmployeeIsNotNull_BonusCalculated()
         {
             // Arrange
             var employeeCollection = _employeeTestsFixture.GenerateValidEmployeeCollection();
@@ -25,7 +26,17 @@ namespace ProfitsDistribution.Domain.Tests
             profitsDistribution.DistributeProfitsByEmployee();
 
             // Assert
-            Assert.NotNull(profitsDistribution.Participacoes);
+            Assert.NotNull(profitsDistribution);
+        }
+
+        [Fact]
+        public void ProfitDistribution_EmployeeIsNull_BonusNotCalculated()
+        {
+            // Arrange & Act
+            var exception = Record.Exception(() => new ProfitDistribution(null));
+
+            // Assert
+            Assert.IsType<ArgumentException>(exception);
         }
     }
 }
