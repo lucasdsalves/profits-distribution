@@ -52,12 +52,12 @@ Although, connection settings are available on <i>appsettings.json</i>
 <b><i>ProfitsDistributionController.cs </b></i>
 
 ```csharp
-        [HttpGet("get-all")]
+        [HttpGet("distribute-profits")]
         [SwaggerOperation(
-            Summary = "Get users collection from Firebase realtime database."
+            Summary = "Distribute profits by employee and get its participation value."
         )]
-        public async Task<IActionResult> GetAllEmployees()
+        public async Task<IActionResult> DistributeProfits()
         {
-            return Ok(await _employeeService.GetAllEmployeesAsync());
+            return Ok(await _profitsDistributionService.DistributeProfitsAsync());
         }
 ```		
